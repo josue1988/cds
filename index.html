@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolos con CDS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            transition: margin-left 0.3s ease; /* Transición para que el contenido se desplace cuando se abra el menú */
+        }
+
+        h1 {
+            color: #6A4C9C;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilo del menú lateral */
+        #menu {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Establece el menú fuera de la vista */
+            background-color: #6A4C9C;
+            padding-top: 40px; /* Ajuste para mover los elementos hacia abajo */
+            transition: 0.3s;
+            color: white;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        #menu a {
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #menu a:hover {
+            background-color: #888;
+        }
+
+        /* Botón del menú */
+        .menu-btn {
+            font-size: 18px;
+            color: #6A4C9C;
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .menu-btn i {
+            margin-right: 10px;
+        }
+
+        /* Estilo del contenido */
+        .content {
+            margin-left: 0; /* El contenido se desplaza hacia la derecha cuando se abre el menú */
+            padding: 20px;
+            background-color: #f1f1f1;
+            min-height: 100vh;
+            transition: margin-left 0.3s ease; /* Transición suave cuando el contenido se desplaza */
+        }
+
+        .protocol {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .protocol h2 {
+            color: #6A4C9C;
+        }
+
+        .protocol ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .protocol ul li {
+            margin-bottom: 10px;
+        }
+
+        .protocol p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        /* Estilo del submenú */
+        #submenu {
+            display: none;
+            margin-left: 20px;
+        }
+
+        #submenu a {
+            font-size: 16px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón para abrir/cerrar el menú -->
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i> MENÚ
+    </button>
+
+    <!-- Menú lateral -->
+    <div id="menu">
+        <a href="javascript:void(0)" onclick="toggleSubMenu()" style="padding-top: 30px;">Protocolos con CDS <i class="fas fa-caret-down"></i></a>
+        <div id="submenu">
+            <a href="javascript:void(0)" onclick="showProtocol('nasal')"><i class="fas fa-smog icon"></i> Protocolo Nasal</a>
+            <a href="javascript:void(0)" onclick="showProtocol('gargaras')"><i class="fas fa-head-side-cough icon"></i> Protocolo Gárgaras</a>
+            <a href="javascript:void(0)" onclick="showProtocol('ojos')"><i class="fas fa-eye icon"></i> Protocolo Gotas Ojos</a>
+            <a href="javascript:void(0)" onclick="showProtocol('bucal')"><i class="fas fa-tooth icon"></i> Spray Bucal</a>
+            <a href="javascript:void(0)" onclick="showProtocol('piscina')"><i class="fas fa-swimming-pool icon"></i> Protocolo para Piscina</a>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="content">
+        <h1>Protocolos con CDS</h1>
+
+        <!-- Protocolo Nasal -->
+        <div class="protocol" id="nasal">
+            <h2>Protocolo Nasal:</h2>
+            <p>Los conductos nasales son espacios abiertos detrás de la nariz. Los órganos de los sentidos se comunican entre sí, en caso de infecciones en vías respiratorias, problemas de migraña y cefalea se conecta con la zona frontal, el protocolo nasal ayuda a estos problemas de salud significativamente.</p>
+            <ul>
+                <li>10 ml de CDS en 50ml de solución salina o suero fisiológico.</li>
+                <li>Inclínese sobre la cabeza de modo que la fosa nasal izquierda quede hacia abajo, y luego haga lo mismo con el otro lado. Se hace el lavado nasal con una jeringa de 5ml hasta 10 ml de contenido. 2 o 3 veces completamente.</li>
+            </ul>
+            <p>Para niños se usa la mitad de la dosis tanto de solución como de CDS.</p>
+        </div>
+
+        <!-- Protocolo Gárgaras -->
+        <div class="protocol" id="gargaras">
+            <h2>Protocolo Gárgaras:</h2>
+            <p>Es de mucha ayuda para complementar protocolo de virus orales, gingivitis, dolor de garganta, amigdalitis, problemas de garganta, problemas de voz, etc.</p>
+            <ul>
+                <li>Preparar 3ml de CDS en medio vaso de agua y hacer gárgaras de 2 a 3 veces por día.</li>
+            </ul>
+            <p>Para niños, la mitad de la dosis en CDS y agua.</p>
+        </div>
+
+        <!-- Protocolo Gotas Ojos -->
+        <div class="protocol" id="ojos">
+            <h2>Protocolo Gotas Ojos:</h2>
+            <p>Recomendado para infección, pliegirio, cataratas, virus quitantes, entre otros. Se utiliza como preventivo, dejando una visión más clara, ojos limpios y descansados. También a largo plazo puede restaurar la visión.</p>
+            <ul>
+                <li>Prepara en un gotero de polietileno de alta densidad, 60 ml de suero fisiológico + 10 gotas de CDS + 10 de DMSO.</li>
+                <li>Aplicar 2 gotas cada 2 horas. La eficacia de la preparación solo durará 3 días, deberá preparar cada 3 días la dosis.</li>
+            </ul>
+        </div>
+
+        <!-- Spray Bucal -->
+        <div class="protocol" id="bucal">
+            <h2>Spray Bucal:</h2>
+            <p>Es útil para halitosis, prevención de virus, protección de estornudos ajenos, amigdalitis, tos, entre otros.</p>
+            <ul>
+                <li>En un atomizador prepara mitad de CDS y mitad de agua. Usar las veces que sea necesaria.</li>
+            </ul>
+        </div>
+
+<!-- Protocolo para Piscina -->
+<div class="protocol" id="piscina">
+    <h2>Protocolo para Piscina:</h2>
+    <p>El tratamiento con dióxido de cloro para piscinas es una opción más segura y económica que el uso del cloro clásico. El dióxido de cloro tiene menos efectos perjudiciales tanto para los bañistas como para la calidad del agua.</p>
+
+    <h3><br>Información sobre el uso de dióxido de cloro en piscinas:</br></h3>
+    <ul>
+        <li>Inhalar un poco de ClO2 no es perjudicial, pero gran cantidad puede ser peligroso. De hecho, los quirófanos se esterilizan con ClO2, lo que da ese olor característico.</li>
+        <li>El tratamiento debe realizarse al anochecer para que el producto trabaje durante la noche, ya que por la mañana el ClO2 se evapora.</li>
+        <li>El tratamiento en piscinas se realiza con un kit potabilizador (MMS) y no con CDS.</li>
+    </ul>
+
+    <h3><br>Si se mide el pH, se puede optimizar el tratamiento:</br></h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>pH</th>
+                <th>Tratamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Ácido (< 7)</strong></td>
+                <td>Solo tratar con clorito.</td>
+            </tr>
+            <tr>
+                <td><strong>Alcalino (> 7)</strong></td>
+                <td>Tratar con el kit (clorito + activador).</td>
+            </tr>
+            <tr>
+                <td><strong>Neutro (= 7)</strong></td>
+                <td>Usar la mitad de la dosis.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><br>Uso de dióxido de cloro para el tratamiento del agua en piscinas:</br></h3>
+    <ol>
+        <li>Para piscinas pequeñas (hasta 10 m³), se recomienda una dosis de 20 ml del kit potabilizador por cada m³ de agua cada 24 horas.</li>
+        <li>Mezcla en un vaso 10 ml de clorito de sodio y 10 ml de activador por cada m³ a tratar y agita durante 10 segundos.</li>
+        <li>Vierte la mezcla en un cubo lleno de agua y agita de nuevo, posteriormente vierte el cubo de agua en la piscina al anochecer (22:30) para que el ClO2 trabaje durante la noche.</li>
+        <li>El agua estará lista para usarse por la mañana, sin ningún olor o sabor a cloro.</li>
+    </ol>
+
+    <h3><br>Factores a tener en cuenta a la hora de utilizar el dióxido de cloro para el tratamiento de agua de piscinas pequeñas:</br></h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Factor</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Mezcla en exterior</strong></td>
+                <td>Es importante hacer la mezcla en el exterior junto a la piscina para, una vez diluida, verterla directamente en la piscina.</td>
+            </tr>
+            <tr>
+                <td><strong>Inhalación</strong></td>
+                <td>No se debe inhalar la mezcla. Es primordial ponerse en una posición de espaldas al viento durante todo el proceso de mezcla y reacción.</td>
+            </tr>
+            <tr>
+                <td><strong>Salpicaduras</strong></td>
+                <td>En caso de salpicadura del activador, del clorito o la mezcla, no se debe esperar mucho tiempo para enjuagar la zona salpicada con agua. Una vez terminado el tratamiento de la piscina, enjuáguese con el agua de la misma.</td>
+            </tr>
+            <tr>
+                <td><strong>Enjuague del recipiente</strong></td>
+                <td>Es importante enjuagar el recipiente donde se ha hecho la mezcla antes de entrarlo de nuevo a casa.</td>
+            </tr>
+            <tr>
+                <td><strong>Dosis de choque</strong></td>
+                <td>Si el agua se ha estropeado, aplica una dosis de choque multiplicando por 10 la dosis recomendada.</td>
+            </tr>
+            <tr>
+                <td><strong>Exposición al sol</strong></td>
+                <td>Tras 3 horas de contacto directo de los rayos del sol con el agua, el agua queda sin producto. El agua queda apta para alérgicos al cloro.</td>
+            </tr>
+            <tr>
+                <td><strong>Oleadas de calor</strong></td>
+                <td>En oleadas de calor, aumentar la dosis en un 20%</td>
+            </tr>
+            <tr>
+                <td><strong>Ausencia prolongada</strong></td>
+                <td>Si va a ausentarse varios días, aplique clorito sódico solo (sin activador) doblando su dosis por los días a ausentarse. Por ejemplo, si su dosis es 100 + 100 y va a ausentarse 5 días, aplique 100 x 2 x 5 = 1000 ml de clorito.</td>
+            </tr>
+            <tr>
+                <td><strong>Tratamiento para agua estropeada</strong></td>
+                <td>En el caso que el agua se haya estropeado, aplicar una dosis de choque multiplicando por 10 la dosis recomendada.</td>
+            </tr>
+            <tr>
+                <td><strong>Tipo de piscina</strong></td>
+                <td>El tratamiento con dióxido de cloro es idóneo y está pensado para piscinas pequeñas (hasta 10,000 l), sin dosificadores automatizados y sin mediciones de pH.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><br>Tratamiento de agua de piscinas con dióxido de cloro:</br></h3>
+    <p>Es común pensar que el cloro clásico es el único método de tratar el agua de las piscinas pequeñas, pero existen otras opciones de igual valía que son menos peligrosas y que producen menos efectos perjudiciales en los bañistas.</p>
+    <p>Hablamos del dióxido de cloro, una dilución de clorito de sodio y ácido clorhídrico con la que tratar el agua de tu piscina será mucho más sencillo y cómodo.</p>
+    <p>Mientras que el cloro clásico presenta unas características que, en caso de ser mal utilizado, puede causar perjuicios para los bañistas, el dióxido de cloro usado en el agua de las piscinas tiene un mejor impacto tanto con las personas que disfrutan de ella como en la misma agua.</p>
+
+    <h3><br>Diferencias entre el cloro clásico y el dióxido de cloro para el tratamiento de agua de piscinas:</br></h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Cloro Clásico</th>
+                <th>Dióxido de Cloro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Tóxicos</strong></td>
+                <td>Producción de trihalometanos, tóxicos y asociados al cáncer.</td>
+                <td>No produce efectos perjudiciales para la salud.</td>
+            </tr>
+            <tr>
+                <td><strong>Ojos</strong></td>
+                <td>Causa irritación en los ojos.</td>
+                <td>No irrita los ojos.</td>
+            </tr>
+            <tr>
+                <td><strong>Piel</strong></td>
+                <td>Causa irritación en la piel.</td>
+                <td>No interactúa negativamente con la piel, siendo incluso beneficioso para las heridas.</td>
+            </tr>
+            <tr>
+                <td><strong>Sobredosis</strong></td>
+                <td>En caso de duplicar la dosis, los efectos son graves.</td>
+                <td>Haría falta multiplicar por 50 la dosis para notar efectos molestos.</td>
+            </tr>
+            <tr>
+                <td><strong>Tiempo de Espera</strong></td>
+                <td>Puede tomar varias horas para que el efecto del cloro sea completo.</td>
+                <td>No es necesario esperar, el producto funciona de inmediato.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var content = document.querySelector(".content");
+            if (menu.style.left === "0px") {
+                menu.style.left = "-250px";
+                content.style.marginLeft = "0";
+            } else {
+                menu.style.left = "0";
+                content.style.marginLeft = "250px";
+            }
+        }
+
+        function toggleSubMenu() {
+            var submenu = document.getElementById("submenu");
+            var caret = document.querySelector('#menu a i');
+            if (submenu.style.display === "none") {
+                submenu.style.display = "block";
+                caret.classList.remove("fa-caret-down");
+                caret.classList.add("fa-caret-up");
+            } else {
+                submenu.style.display = "none";
+                caret.classList.remove("fa-caret-up");
+                caret.classList.add("fa-caret-down");
+            }
+        }
+
+        function showProtocol(protocolId) {
+            // Ocultar todos los protocolos
+            var protocols = document.querySelectorAll('.protocol');
+            protocols.forEach(function(protocol) {
+                protocol.style.display = 'none';
+            });
+
+            // Mostrar el protocolo seleccionado
+            var selectedProtocol = document.getElementById(protocolId);
+            if (selectedProtocol) {
+                selectedProtocol.style.display = 'block';
+            }
+        }
+
+        // Mostrar todos los protocolos cuando se carga la página
+        window.onload = function() {
+            showAllProtocols();
+        };
+
+        function showAllProtocols() {
+            var protocols = document.querySelectorAll('.protocol');
+            protocols.forEach(function(protocol) {
+                protocol.style.display = 'block'; // Muestra todos los protocolos al cargar
+            });
+        }
+    </script>
+
+</body>
+</html>
